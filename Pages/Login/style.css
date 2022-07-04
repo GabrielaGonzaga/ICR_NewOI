@@ -1,0 +1,6 @@
+
+body{
+    flex: 1;
+   background: url("../../Assets//img/background.png") no-repeat ;
+   background-size: cover;
+}
