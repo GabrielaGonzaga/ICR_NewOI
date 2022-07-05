@@ -9,16 +9,21 @@
     <link rel="stylesheet" href="../../Assets/css/global.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
 </head>
-<body>
+<body id="backg">
     <div class="container">
+
         <div class="content">
                <img src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
-                <h1>Simples, Flexível, Poderoso.</h1>
-                <form action="">
-                    <select class="ic-server" id="ic-server">
-                        <option value="valor1">Empresa/Filial</option>
-                        <option value="valor2">Valor 2</option>
-                        <option value="valor3">Valor 3</option>
+                <h1>NewOI</h1>
+                <h2>Simples, Flexível, Poderoso.</h2>
+                <form id="form" onsubmit="ShowLoading()">
+                    <select  id="ic-server" >
+                        <option value="1">Empresa/Filial</option>
+                        <option value="2">Empresa 01 - Santo André</option>
+                        <option value="3">Empresa 01 - São Caetano do Sul</option>
+                        <option value="4">Empresa 01 - São Paulo</option>
+                        <option value="5">Empresa 02 - São Paulo</option>
+                        <option value="6">Empresa 03 - São Paulo</option>
                     </select>
                     <input type="text" id="ic-user" placeholder="Usuário"/>
                     <input type="text" id="ic-lock" placeholder="Senha"/> 
@@ -26,10 +31,24 @@
                     <div class="in-radio">
                         <input type="radio"> &nbsp Lembrar usuário e senha</input> 
                     </div>
-                    <button>Entrar</button>
-                </form> 
+                    <button type="submit" value="sumit "> Entrar</button>
+                </form>                
+                <div id="load" style="display: none; justify-content: space-between; flex-direction: column; padding-top: 1rem; padding-bottom: 10rem; width: 10rem; height: 10rem;"  >
+                    <img src="https://www.dariusland.com/images/load.gif" alt="">
+                    <img  class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+                </div> 
         </div>
-        <img  class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+            <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    function ShowLoading(e) {
+        document.getElementById("form").style.display = "none";
+        document.getElementById("backg").style.backgroundImage = "none";
+        document.getElementById("logo_ICR").style.display = "none";
+        document.getElementById("load").style.display = "flex";
+        return true;
+    }
+</script>

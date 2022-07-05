@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../Assets/css/global.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
+</head>
+<body id="backg">
+    
+    <div class="container">
+        <div class="content">
+            <div id="logo" class="box1">
+                <img  src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
+                <h1>NewOI</h1>
+                <h2>Simples, Flexível, Poderoso.</h2>
+            </div>
+            <div id="form"  onclick="ShowLoading()">
+                <form>
+                    <select  id="ic-server" >
+                        <option value="1">Empresa/Filial</option>
+                        <option value="2">Empresa 01 - Santo André</option>
+                        <option value="3">Empresa 01 - São Caetano do Sul</option>
+                        <option value="4">Empresa 01 - São Paulo</option>
+                        <option value="5">Empresa 02 - São Paulo</option>
+                        <option value="6">Empresa 03 - São Paulo</option>
+                    </select>
+                    <input type="text" id="ic-user" placeholder="Usuário"/>
+                    <input type="password" id="ic-lock" placeholder="Senha"/> 
+                        <a href="">Esqueci minha senha</a> 
+                    <div class="in-radio">
+                        <input type="radio">&nbspLembrar usuário e senha</input> 
+                    </div>
+                    <input class="submit"  type="submit" value="Entrar "></input>
+                    <button onclick="location.href='www.yoursite.com'">Click Me</button>
+                </form>   
+            </div>
+                            
+            <div id="load"   >
+                <div class="spin"></div>
+            </div> 
+        </div>
+    </div>
+    <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+</body>
+</html>
+
+<script type="text/javascript">
+     function ShowLoading(e) {
+    document.getElementById("form").style.display = "none";
+    document.getElementById("logo").style.transition = "all 2s";
+    document.getElementById("backg").style.backgroundImage = "none";
+    document.getElementById("logo_ICR").style.display = "none";
+    document.getElementById("load").style.display = "flex";
+
+    const submit = true
+
+    if (submit) {
+    location.href = "https://www.javascripttutorial.net/";
+    }
+    else {
+        document.getElementById('submitbutton').disabled = 'disabled';
+    }
+}
+</script>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
+</script>
+
+
+
+
+<!-- 
+    transition, scale
+    accept
+
+-->
+
+
+<!-- <script type="text/javascript">
+    function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'loading_bar.GIF';
+        div.innerHTML = "Loading...<br />";
+        div.style.cssText = 'position: fixed; top: 5%; left: 40%; z-index: 5000; width: 422px; text-align: center; background: #EDDBB0; border: 1px solid #000';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+        // These 2 lines cancel form submission, so only use if needed.
+        //window.event.cancelBubble = true;
+        //e.stopPropagation();
+    }
+</script> -->
+
