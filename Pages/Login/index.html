@@ -10,11 +10,10 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
 </head>
 <body id="backg">
-    
     <div class="container">
         <div class="content">
             <div id="logo" class="box1">
-                <img  src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
+                <img id="logo-NewIO" src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
                 <h1>NewOI</h1>
                 <h2>Simples, Flexível, Poderoso.</h2>
             </div>
@@ -38,13 +37,13 @@
                 </form>   
             </div>
                             
-            <div id="load"   >
+            <div id="load">
                 <div class="spin"></div>
             </div> 
         </div>
     </div>
+        <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
     
-    <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
 </body>
 </html>
 
@@ -53,10 +52,57 @@
 
         document.getElementById("form").style.display = "none";
         document.getElementById("load").style.display = "block";
+        document.getElementById("load").style.transition = "1s";
+        document.getElementById("load").style.opacity = "1";
 
-        function Time() {
-            setInterval(Auth, 8000);
-        }
+        const background = document.getElementById("backg");
+        const logoIcr = document.getElementById("logo_ICR");
+        const logoNewIO = document.getElementById("logo");
+        const load = document.getElementById("load");
+
+
+        background.animate([
+        // keyframes
+        { transform: 'translateY(0px)' },
+        { transform: 'translateY(-160px)' }
+        ], {
+        // timing options
+        duration: 1000,
+        iterations: Infinity
+        });
+
+        logoIcr.animate([
+        // keyframes
+        { transform: 'translateY(0px)' },
+        { transform: 'translateY(-160px)' }
+        ], {
+        // timing options
+        duration: 1000,
+        iterations: Infinity
+        });
+
+        logoNewIO.animate([
+        // keyframes
+        { transform: 'translateY(0px)' },
+        { transform: 'translateY(30px)' }
+        ], {
+        // timing options
+        duration: 1000,
+        iterations: Infinity
+        });
+
+        load.animate([
+        // keyframes
+        { transform: 'translateY(0px)' },
+        { transform: 'translateY(30px)' }
+        ], {
+        // timing options
+        duration: 1000,
+        iterations: Infinity
+        });
+
+        load.style.opacity = "1";
+
         let auth = false;
 
         if(!auth){

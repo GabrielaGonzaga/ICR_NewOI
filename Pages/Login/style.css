@@ -168,13 +168,22 @@ body{
   }
   
   .log-icr{
-     margin-top: -9rem;
+     margin-top: -10rem;
   }
   
   #load{
+    height: 20rem;
+    margin: 1rem ;
     display: none; 
     justify-content: space-between; 
     flex-direction: column; 
+    transition: 0.2s;
+    opacity: 0;
+  }
+  
+  #load img{
+    transition: 0.2s;
+    opacity: 0;
   }
   
   .spin {
