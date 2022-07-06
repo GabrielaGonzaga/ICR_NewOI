@@ -10,13 +10,16 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
 </head>
 <body id="backg">
+    
     <div class="container">
-
         <div class="content">
-               <img src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
+            <div id="logo" class="box1">
+                <img  src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
                 <h1>NewOI</h1>
                 <h2>Simples, Flexível, Poderoso.</h2>
-                <form id="form" onsubmit="ShowLoading()">
+            </div>
+            <div id="form" >
+                <form >
                     <select  id="ic-server" >
                         <option value="1">Empresa/Filial</option>
                         <option value="2">Empresa 01 - Santo André</option>
@@ -26,29 +29,83 @@
                         <option value="6">Empresa 03 - São Paulo</option>
                     </select>
                     <input type="text" id="ic-user" placeholder="Usuário"/>
-                    <input type="text" id="ic-lock" placeholder="Senha"/> 
-                     <a href="">Esqueci minha senha</a> 
+                    <input type="password" id="ic-lock" placeholder="Senha"/> 
+                        <a href="">Esqueci minha senha</a> 
                     <div class="in-radio">
-                        <input type="radio"> &nbsp Lembrar usuário e senha</input> 
+                        <input type="radio">&nbspLembrar usuário e senha</input> 
                     </div>
-                    <button type="submit" value="sumit "> Entrar</button>
-                </form>                
-                <div id="load" style="display: none; justify-content: space-between; flex-direction: column; padding-top: 1rem; padding-bottom: 10rem; width: 10rem; height: 10rem;"  >
-                    <img src="https://www.dariusland.com/images/load.gif" alt="">
-                    <img  class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
-                </div> 
+                    <input id="button" onclick="Auth()" class="submit"  type="button" value="button">
+                </form>   
+            </div>
+                            
+            <div id="load"   >
+                <div class="spin"></div>
+            </div> 
         </div>
-            <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
     </div>
+    
+    <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
 </body>
 </html>
 
 <script type="text/javascript">
-    function ShowLoading(e) {
+    function Auth(e) { 
+
         document.getElementById("form").style.display = "none";
-        document.getElementById("backg").style.backgroundImage = "none";
-        document.getElementById("logo_ICR").style.display = "none";
-        document.getElementById("load").style.display = "flex";
-        return true;
+        document.getElementById("load").style.display = "block";
+
+        function Time() {
+            setInterval(Auth, 8000);
+        }
+        let auth = false;
+
+        if(!auth){
+            // window.location.replace("http://127.0.0.1:5500/Pages/Load/Index.html");
+            console.log("User authenticated")
+            
+        }
+        else {
+            console.log("User not authenticated")
+        }
     }
+
+   
 </script>
+
+
+<!-- <script>
+
+    onsubmit="ShowLoading()"
+
+    var image = new Image();
+   // Image for transition
+   image.src = "geek.png";
+   image.onsubmit = function () {
+     $(".element").css("background-image").style.transition = "background 2s infinite alternate";
+   };
+ </script> -->
+
+
+<!-- 
+    transition, scale
+    accept
+
+-->
+
+
+<!-- <script type="text/javascript">
+    function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'loading_bar.GIF';
+        div.innerHTML = "Loading...<br />";
+        div.style.cssText = 'position: fixed; top: 5%; left: 40%; z-index: 5000; width: 422px; text-align: center; background: #EDDBB0; border: 1px solid #000';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+        // These 2 lines cancel form submission, so only use if needed.
+        //window.event.cancelBubble = true;
+        //e.stopPropagation();
+    }
+</script> -->
+

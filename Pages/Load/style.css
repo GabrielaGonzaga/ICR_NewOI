@@ -7,10 +7,10 @@ body{
 
 #backg{
   flex: 1;
-  /* background: url("../../Assets/img/background2.svg") no-repeat ; */
+  background: url("../../Assets/img/background.svg") no-repeat center ;
   background-size: cover;
   width: 100%;   
-  transition: opacity 5s;
+  animation: background 2s infinite alternate;
 }
 
 .box1{
@@ -116,7 +116,7 @@ select{
    margin-top: 1rem;
 }
 
-input[type="submit"]{
+input[type="button"]{
    border: 0;
    color: #FFF;
    width: 170px;
