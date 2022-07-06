@@ -33,7 +33,7 @@ header {
 }
 
 .img-content {
-    width: 12rem;
+    width: 12%;
     height: 100%;
 
     margin-left: 2.3rem;
@@ -57,7 +57,7 @@ h2 {
 }
 
 .searchBar {
-    width: 31rem;
+    width: 100%;
     height: 1.8rem;
 
     border-radius: 2.5rem;
@@ -75,12 +75,12 @@ h2 {
 }
 
 .user-ctn {
-    width: 11rem;
+    width: 10%;
     height: 70px;
 
     /* background-color: #abb7dd; */
 
-    margin-right: 2.3rem;
+    margin-right: 2.5%;
 }
 
 .profilePicture {
@@ -109,11 +109,12 @@ h2 {
     display: none;
 
     position: absolute;
-    right: 2rem;
+    right: -1px;
     margin-top: 0.5rem;
+    margin-right: 2rem;
 
-    width: 9rem;
-    height: 9.3rem;
+    width: 10%;
+    height: 100%;
     background: #fff;
 
     border-radius: 1rem;
@@ -168,7 +169,7 @@ h2 {
 }
 
 .bottom {
-    margin-top: 7px;
+    margin-top: 7px
 }
 
 .profileTetx {
@@ -188,7 +189,7 @@ main {
     /* background-color: rgba(128, 128, 128, 0.507); */
 
     position: absolute;
-    top: 8rem;
+    top: 15%;
 
     display: flex;
     align-items: center;
@@ -197,26 +198,128 @@ main {
 }
 
 nav {
-    width: 14rem;
+    width: 12%;
     height: 95%;
     background-color: #fff;
 
     border-radius: 2rem;
 
     display: flex;
-    justify-content: center;
+    /* justify-content: space-between; */
     align-items: center;
     flex-direction: column;
 }
 
-.nav-ctn {
+.topNavigation {
     width: 100%;
-    height: 93%;
+    height: 40%;
+    /* background-color: green; */
 
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 
-    /* background-color: #222E57;
-    opacity: 0.5; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.nav-content {
+    width: 100%;
+    height: 17%;
+    /* background-color: lightblue; */
+
+    display: flex;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.nav-img {
+    width: 12%;
+    margin-left: 0.8rem;
+    margin-right: 1rem;
+
+    color: #233E71;
+}
+
+.nav-text {
+    color: #A6A6A6;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1rem;
+
+    text-transform: capitalize;
+
+    transition: 0.5s;
+}
+
+.nav-text:hover {
+    color: #233E71;
+}
+
+.navSelect {
+    margin-left: 8%;
+
+    background-color: #fff;
+    border: none;
+}
+
+.midAndBottom {
+    width: 100%;
+    height: 60%;
+    /* background-color: blue; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.midButton {
+    width: 100%;
+    height: 15%;
+    /* background-color: green; */
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.openClose {
+    display: block;
+
+    width: 15%;
+    height: 80%;
+
+    background-color: #fff;
+
+    border-radius: 50px;
+    border: none;
+
+    position: relative;
+    left: 7%;
+}
+
+.openClose-img {
+    width: 70%;
+    transform: rotate(90deg);
+}
+
+.bottomNavigation {
+    width: 100%;
+    height: 25%;
+
+    margin-bottom: 1rem;
+
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .content {
@@ -227,99 +330,164 @@ nav {
     border-radius: 2rem;
 }
 
-.navigation {
+footer {
     width: 100%;
-    height: 50%;
+    height: 10vh;
     /* background-color: blue; */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.navigation div a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    padding-left: 0.8rem;
-    text-decoration: none;
-}
-
-#navText p {
-    transition: 0.5s;
-}
-
-#navText p:hover {
-    color: #233E71;
-}
-
-.navigation div a svg {
-    width: 1.5em;
-    color: #a6a6a6;
-}
-
-.navigation p {
-    padding-left: 1rem;
-    color: #A6A6A6;
-
-    font-family: Montserrat;
-    font-size: 1.1rem;
-    font-weight: 600;
-
-    text-transform: capitalize;
-}
-
-#notificationBtn {
-    position: relative;
-    left: 10px;
-
-    background: none;
-    border: none;
-    color: #A6A6A6;
-}
-
-.nav-footer {
-    width: 100%;
-    height: 30%;
-
-    margin-bottom: 1.5rem;
-    /* background-color: #222E57; */
-
-    display: flex;
-    align-items: flex-end;
-}
-
-.openClose-nav {
-    width: 30px;
-    height: 50px;
-
-    background-color: #fff;
-    border-radius: 50px;
-    border: none;
-
-    margin-top: 2rem;
-
-    position: absolute;
-    left: 15.3rem;
-}
-
-.openClose-Arrow {
-    width: 20px;
-    transform: rotate(90deg);
-}
-
-footer {
     position: absolute;
     bottom: 0;
-
-    width: 100%;
-    height: 11vh;
-
-    display: flex;
-    flex-direction: row;
 }
 
 .logoFooter {
+    width: 30%;
+    height: 100%;
+    /* background-color: red; */
+
     display: flex;
+    align-items: center;
+
+    padding-left: 2%;
 }
+
+.footer-text {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 14px;
+
+    padding-left: 1rem;
+}
+
+.center-ctn {
+    width: 5%;
+    height: 100%;
+}
+
+.center-img {
+    width: 70%;
+}
+
+.ICR-logo-footer {
+    width: 55%;
+    height: 100%;
+
+    /* background-color: #233E71; */
+
+    margin-right: 2.2rem;
+}
+
+@media screen and (max-width: 1600px){
+
+    header {
+        height: 6.5rem;
+    }
+
+    #profileNavigation {
+        width: 12%;
+    }
+
+    .user-ctn {
+        margin-right: 2.5rem;
+        width: 13%;
+    }
+
+    .img-content {
+        width: 15%;
+    }
+
+    .date {
+       font-size: 16px;
+    }
+
+    .logoFooter {
+        width: 40%;
+    }
+
+    .footer-text {
+        font-size: 12px;
+    }
+    .nav-text {
+        font-size: 15px;
+    }
+
+    nav {
+        height: 100%;
+        width: 15%;
+    }
+
+    .content {
+        height: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+    .user-ctn {
+        width: 14%;
+    }
+}
+
+@media screen and (max-width: 1201px) {
+
+    header {
+        height: 6rem;
+    }
+
+    main {
+        top: 13%;
+    }
+
+    .user-ctn {
+        width: 18%;
+        margin-right: 1.5rem;
+    }
+
+    .img-content {
+        width: 20%;
+        margin-left: 1rem;
+    }
+
+    nav {
+        width: 20%;
+    }
+
+    .content {
+        width: 75%;
+    }
+
+    .ICR-logo-footer {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .user-ctn {
+        width: 25%;
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-img {
+        display: none;
+    }
+
+    .center-ctn {
+        width: 10%;
+    }
+
+    .center-img{
+        width: 100%;
+    }
+
+    .ICR-logo-footer {
+        width: 100%;
+    }
+
+    .logoFooter {
+        width: 70%;
+    }
+}
+
