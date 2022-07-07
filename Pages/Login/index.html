@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../../Assets/css/global.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
 </head>
-<body id="backg">
+
+<body>
     <div class="container">
         <div class="content">
             <div id="logo" class="box1">
@@ -39,37 +40,37 @@
                             
             <div id="load">
                 <div class="spin"></div>
-            </div> 
-        </div>
-    </div>
-        <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
-    
+            </div>  
+</div>
+<div>
+    <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+</div>
+    <div id="backg"></div>
 </body>
 </html>
 
 <script type="text/javascript">
-    function Auth(e) { 
-
-        document.getElementById("form").style.display = "none";
-        document.getElementById("load").style.display = "block";
-        document.getElementById("load").style.transition = "1s";
-        document.getElementById("load").style.opacity = "1";
-
+     function Animation (e){
         const background = document.getElementById("backg");
         const logoIcr = document.getElementById("logo_ICR");
         const logoNewIO = document.getElementById("logo");
         const load = document.getElementById("load");
 
+        background.style.opacity = "0.9"
+        background.style.imageRendering = "smooth"
 
         background.animate([
         // keyframes
-        { transform: 'translateY(0px)' },
-        { transform: 'translateY(-160px)' }
+        { transform: 'translateY(10px)' },
+        { transform: 'translateY(-10)' },
+        { transform: 'scale(1.8)' },
         ], {
         // timing options
-        duration: 1000,
-        iterations: Infinity
+        duration: 2300,
+        iterations: 1
         });
+
+        background.style.animation = "animate  1s normal forwards ease-in-out;"
 
         logoIcr.animate([
         // keyframes
@@ -77,18 +78,18 @@
         { transform: 'translateY(-160px)' }
         ], {
         // timing options
-        duration: 1000,
-        iterations: Infinity
+        duration: 1700,
+        iterations: 1
         });
 
         logoNewIO.animate([
         // keyframes
         { transform: 'translateY(0px)' },
-        { transform: 'translateY(30px)' }
+        { transform: 'translateY(30px)'}
         ], {
         // timing options
-        duration: 1000,
-        iterations: Infinity
+        duration: 2000,
+        iterations: 1
         });
 
         load.animate([
@@ -97,25 +98,34 @@
         { transform: 'translateY(30px)' }
         ], {
         // timing options
-        duration: 1000,
-        iterations: Infinity
+        duration: 2000,
+        iterations: 1
         });
-
-        load.style.opacity = "1";
-
-        let auth = false;
-
-        if(!auth){
-            // window.location.replace("http://127.0.0.1:5500/Pages/Load/Index.html");
-            console.log("User authenticated")
-            
-        }
-        else {
-            console.log("User not authenticated")
-        }
     }
 
-   
+    function Auth(e) { 
+
+        document.getElementById("form").style.display = "none";
+        document.getElementById("load").style.display = "block";
+        document.getElementById("load").style.transition = "1s";
+        document.getElementById("load").style.opacity = "1";
+        let auth = true;
+        Animation();
+
+        //auth conditions
+
+        if(auth){
+            // window.location.replace("http://127.0.0.1:5500/Pages/Load/Index.html");
+            window.location.replace("http://link.com.br");
+            console.log("User authenticated")
+        }
+        else { 
+            Animation() = true;
+        }
+        
+    } 
+    // document.getElementById("button").onsubmit = setTimeout(Auth ,2000);
+    // clearTimeout(Auth);
 </script>
 
 

@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   
   #backg{
@@ -10,7 +11,9 @@ body{
     background: url("../../Assets/img/background.svg") no-repeat center ;
     background-size: cover;
     width: 100%;   
-    animation: background 2s infinite alternate;
+    height: 100%;   
+    opacity: 1;
+    image-rendering: smooth;
   }
   
   .box1{
@@ -128,8 +131,12 @@ body{
      border-radius: 50px;
   }
   
-  input[type="submit"]:hover{
+  input[type="button"]:hover{
      background: linear-gradient(135deg, #d8c200 0%, #c8971a 100%);
+  }
+
+  input[type="button"]:active{
+   
   }
   
   
@@ -168,7 +175,9 @@ body{
   }
   
   .log-icr{
-     margin-top: -10rem;
+     position: fixed;
+     margin-top: 51rem;
+     left: 46%;
   }
   
   #load{
