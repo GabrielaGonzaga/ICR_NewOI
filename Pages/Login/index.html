@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login NewOI</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../../Assets/css/global.css">
+    <script src="../../Assets/scripts/auth.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"/></script>
 </head>
-
 <body>
     <div class="container">
-        <div class="content">
+        <div id= "content" class="content">
             <div id="logo" class="box1">
                 <img id="logo-NewIO" src="../../Assets/img/logo_NewOI.png " alt="Logo NewOI">
                 <h1>NewOI</h1>
@@ -41,127 +41,11 @@
             <div id="load">
                 <div class="spin"></div>
             </div>  
-</div>
-<div>
-    <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+            <img  id="logo_ICR" class="log-icr" src="../../Assets/img/logo_ICR.png" alt="Logo ICR">
+            <div id="load">
+                <div class="spin"></div>
+        </div>  
 </div>
     <div id="backg"></div>
 </body>
 </html>
-
-<script type="text/javascript">
-     function Animation (e){
-        const background = document.getElementById("backg");
-        const logoIcr = document.getElementById("logo_ICR");
-        const logoNewIO = document.getElementById("logo");
-        const load = document.getElementById("load");
-
-        background.style.opacity = "0.9"
-        background.style.imageRendering = "smooth"
-
-        background.animate([
-        // keyframes
-        { transform: 'translateY(10px)' },
-        { transform: 'translateY(-10)' },
-        { transform: 'scale(1.8)' },
-        ], {
-        // timing options
-        duration: 2300,
-        iterations: 1
-        });
-
-        background.style.animation = "animate  1s normal forwards ease-in-out;"
-
-        logoIcr.animate([
-        // keyframes
-        { transform: 'translateY(0px)' },
-        { transform: 'translateY(-160px)' }
-        ], {
-        // timing options
-        duration: 1700,
-        iterations: 1
-        });
-
-        logoNewIO.animate([
-        // keyframes
-        { transform: 'translateY(0px)' },
-        { transform: 'translateY(30px)'}
-        ], {
-        // timing options
-        duration: 2000,
-        iterations: 1
-        });
-
-        load.animate([
-        // keyframes
-        { transform: 'translateY(0px)' },
-        { transform: 'translateY(30px)' }
-        ], {
-        // timing options
-        duration: 2000,
-        iterations: 1
-        });
-    }
-
-    function Auth(e) { 
-
-        document.getElementById("form").style.display = "none";
-        document.getElementById("load").style.display = "block";
-        document.getElementById("load").style.transition = "1s";
-        document.getElementById("load").style.opacity = "1";
-        let auth = true;
-        Animation();
-
-        //auth conditions
-
-        if(auth){
-            // window.location.replace("http://127.0.0.1:5500/Pages/Load/Index.html");
-            window.location.replace("http://link.com.br");
-            console.log("User authenticated")
-        }
-        else { 
-            Animation() = true;
-        }
-        
-    } 
-    // document.getElementById("button").onsubmit = setTimeout(Auth ,2000);
-    // clearTimeout(Auth);
-</script>
-
-
-<!-- <script>
-
-    onsubmit="ShowLoading()"
-
-    var image = new Image();
-   // Image for transition
-   image.src = "geek.png";
-   image.onsubmit = function () {
-     $(".element").css("background-image").style.transition = "background 2s infinite alternate";
-   };
- </script> -->
-
-
-<!-- 
-    transition, scale
-    accept
-
--->
-
-
-<!-- <script type="text/javascript">
-    function ShowLoading(e) {
-        var div = document.createElement('div');
-        var img = document.createElement('img');
-        img.src = 'loading_bar.GIF';
-        div.innerHTML = "Loading...<br />";
-        div.style.cssText = 'position: fixed; top: 5%; left: 40%; z-index: 5000; width: 422px; text-align: center; background: #EDDBB0; border: 1px solid #000';
-        div.appendChild(img);
-        document.body.appendChild(div);
-        return true;
-        // These 2 lines cancel form submission, so only use if needed.
-        //window.event.cancelBubble = true;
-        //e.stopPropagation();
-    }
-</script> -->
-
