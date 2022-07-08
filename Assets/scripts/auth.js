@@ -4,7 +4,7 @@ function Auth(e) {
     document.getElementById("form").style.display = "none";
     let auth = true;
          
-    if(auth){
+    if(!auth){
         document.getElementById("load").style.display = "block";
         document.getElementById("load").style.transition = "1s";
         document.getElementById("load").style.opacity = "1";
@@ -57,7 +57,7 @@ function Animation (e){
     background.animate([
     { transform: 'translateY(10px)' },
     { transform: 'translateY(-10)' },
-    { transform: 'scale(2.3)' },
+    { transform: 'scale(1.8)' },
     ], {
     duration: 2300,
     iterations: 1
@@ -67,7 +67,7 @@ function Animation (e){
 
     logoIcr.animate([
     { transform: 'translateY(0px)' },
-    { transform: 'translateY(-140px)' }
+    { transform: 'translateY(-120px)' }
     ], {
     duration: 2300,
     iterations: 1
