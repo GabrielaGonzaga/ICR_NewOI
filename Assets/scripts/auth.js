@@ -18,7 +18,28 @@ function Auth(e) {
         console.log("User authenticated")
     }
     else{
-        console.log("User  not authenticated")
+        document.getElementById("load").style.display = "block";
+        document.getElementById("load").style.transition = "1s";
+        document.getElementById("load").style.opacity = "1";
+        Animation();
+    
+        // if = true, DashBoard href
+        window.setTimeout(function() {
+            document.getElementById("load").style.display = "none";
+            document.getElementById("content").style.paddingTop = "5rem";
+            document.getElementById("backg").style.display = "none";
+            document.getElementById("spin").style.marginBottom = "3rem";
+            document.getElementById("logo_ICR").style.display = "none";
+            document.getElementById("loadStop").style.display = "flex";
+            document.getElementById("loadStop").style.display = "flex";
+            document.getElementById("loadStop").style.padding = " 3rem"
+
+        }, 2300);
+
+        window.setTimeout(function() {
+            document.getElementById("spin").style.display = "none";
+            document.getElementById("no-auth").style.display = "block";
+        }, 2350);
     }
     
 } 
@@ -36,7 +57,7 @@ function Animation (e){
     background.animate([
     { transform: 'translateY(10px)' },
     { transform: 'translateY(-10)' },
-    { transform: 'scale(1.8)' },
+    { transform: 'scale(2.3)' },
     ], {
     duration: 2300,
     iterations: 1
@@ -48,7 +69,7 @@ function Animation (e){
     { transform: 'translateY(0px)' },
     { transform: 'translateY(-140px)' }
     ], {
-    duration: 2400,
+    duration: 2300,
     iterations: 1
     });
 
