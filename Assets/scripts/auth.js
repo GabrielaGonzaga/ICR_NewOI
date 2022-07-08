@@ -1,48 +1,74 @@
 
+const form = document.getElementById('form').onsubmit = Auth;
+
 function Auth(e) { 
 
-    document.getElementById("form").style.display = "none";
-    let auth = true;
-         
-    if(auth){
-        document.getElementById("load").style.display = "block";
-        document.getElementById("load").style.transition = "1s";
-        document.getElementById("load").style.opacity = "1";
-        Animation();
-    
-        // if = true, DashBoard href
-        window.setTimeout(function() {
-            window.location.replace("../DashBoard/index.html");
-        }, 2200);
-   
-        console.log("User authenticated")
-    }
-    else{
-        document.getElementById("load").style.display = "block";
-        document.getElementById("load").style.transition = "1s";
-        document.getElementById("load").style.opacity = "1";
-        Animation();
-    
-        // if = true, DashBoard href
-        window.setTimeout(function() {
-            document.getElementById("load").style.display = "none";
-            document.getElementById("content").style.paddingTop = "5rem";
-            document.getElementById("backg").style.display = "none";
-            document.getElementById("spin").style.marginBottom = "3rem";
-            document.getElementById("logo_ICR").style.display = "none";
-            document.getElementById("loadStop").style.display = "flex";
-            document.getElementById("loadStop").style.display = "flex";
-            document.getElementById("loadStop").style.padding = " 3rem"
+    const userName = document.querySelector('input[name="user"]').value;
+    const password = document.querySelector('input[name="pwd"]').value;
 
-        }, 2300);
-
-        window.setTimeout(function() {
-            document.getElementById("spin").style.display = "none";
-            document.getElementById("no-auth").style.display = "block";
-        }, 2350);
-    }
+    let response;
+    const baseUrl = 'http://localhost:3333';
     
+    fetch(baseUrl + "/sessions", {
+        method: "POST",
+        headers: {"Content-Type":" application/json; charset=UTF-8"},
+        body: JSON.stringify({
+            email: userName,
+            password: password
+        })
+      }).then( function (response){
+        return response
+    }).then( function (apiResponse){
+        // console.log(apiResponse);
+        response = apiResponse
+    }).catch(function(error) {
+        console.log('NOP :(');
+    });
+
+    setTimeout(() => {
+        // console.log(response);    
+        if(response.status == 200){
+            AuthAction()
+          }
+          else{
+              StopAction()
+          }
+          
+    }, 80);
 } 
+
+function AuthAction(){
+    document.getElementById("form").style.display = "none";
+    document.getElementById("load").style.display = "block";
+    Animation();
+
+    window.setTimeout(function() {
+        window.location.replace("../DashBoard/index.html");
+    }, 2100);
+}
+
+function StopAction(){
+    document.getElementById("form").style.display = "none";
+    document.getElementById("load").style.display = "block";
+    Animation();
+
+    window.setTimeout(function() {
+        document.getElementById("load").style.display = "none";
+        document.getElementById("content").style.paddingTop = "5rem";
+        document.getElementById("backg").style.display = "none";
+        document.getElementById("spin").style.marginBottom = "3rem";
+        document.getElementById("logo_ICR").style.display = "none";
+        document.getElementById("loadStop").style.display = "flex";
+        document.getElementById("loadStop").style.display = "flex";
+        document.getElementById("loadStop").style.padding = " 3rem"
+
+    }, 2300);
+
+    window.setTimeout(function() {
+        document.getElementById("spin").style.display = "none";
+        document.getElementById("no-auth").style.display = "block";
+    }, 2300);
+}
 
 function Animation (e){
 

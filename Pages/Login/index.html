@@ -17,8 +17,8 @@
                 <h1>NewOI</h1>
                 <h2>Simples, Flexível, Poderoso.</h2>
             </div>
-            <div id="form" >
-                <form >
+            <div>
+                <form id="form" >
                     <select  id="ic-server" >
                         <option value="1">Empresa/Filial</option>
                         <option value="2">Empresa 01 - Santo André</option>
@@ -27,13 +27,13 @@
                         <option value="5">Empresa 02 - São Paulo</option>
                         <option value="6">Empresa 03 - São Paulo</option>
                     </select>
-                    <input type="text" id="ic-user" placeholder="Usuário"/>
-                    <input type="password" id="ic-lock" placeholder="Senha"/> 
+                    <input type="text" id="ic-user" placeholder="Usuário" name="user"/>
+                    <input type="password" id="ic-lock" placeholder="Senha" name="pwd"/> 
                         <a href="">Esqueci minha senha</a> 
                     <div class="in-radio">
                         <input type="radio">&nbspLembrar usuário e senha</input> 
                     </div>
-                    <input id="button" onclick="Auth()" class="submit"  type="button" value="button">
+                    <button id="button" onclick="Auth()" type="submit"> Entrar </button>
                 </form>   
             </div>
             <div id="load">

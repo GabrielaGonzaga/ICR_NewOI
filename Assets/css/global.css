@@ -10,6 +10,7 @@
 body{
     color: rgb(0, 0, 0);
     -webkit-font-smothing: antialiased;
+    overflow: hidden;
 }
 
 body, input, button, select{
@@ -26,3 +27,46 @@ h1, h2, h3, h4, h5, h6, strong{
 button{
     cursor: pointer;
 }
+
+/* input[type="text"], [type="password"]{
+    border: 0;
+    background: #FFF;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+    box-shadow: 1px 4px 5px 1px #a3aab7;
+    border-radius: 15px;
+    height: 3rem;
+    width: 27rem;
+    color: #8a8a8a;
+ }
+ 
+ select{
+    border: 0;
+    background: #FFF;
+    margin-bottom: 1rem;
+    box-shadow: 1px 4px 5px 1px #a3aab7;
+    border-radius: 15px;
+    height: 3rem;
+    width: 27rem;
+    font-weight: 500;
+    font-size: 20px;
+    color: #8a8a8a;
+    text-decoration: none;
+    -webkit-appearance: none;
+ }
+
+ input[type="button"]{
+    border: 0;
+    color: #FFF;
+    width: 170px;
+    height: 47px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #e6d112 0%, #E9BD00 100%);
+    border-radius: 50px;
+ }
+ 
+ input[type="button"]:hover{
+    background: linear-gradient(135deg, #d8c200 0%, #c8971a 100%);
+ } */
