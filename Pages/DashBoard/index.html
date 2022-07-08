@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../Assets/scripts/index.js"></script>
+
     <link rel="stylesheet" href="../../Assets/css/global.css">
     <link rel="stylesheet" href="./style.css">
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/3380651bc8.js" crossorigin="anonymous"></script>
     <title>DashBoard</title>
 </head>
 
@@ -73,52 +76,85 @@
     </header>
 
     <main>
-        <nav id="navegation">
+        <nav id="navigation">
             <div class="topNavigation">
-                <ul>
-                    <li>
-                        <a class="click" href="#">
-                            <ion-icon class="icon-navigation" name="home-outline"></ion-icon>
-                            <p>home</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="click" href="#">
-                            <ion-icon class="icon-navigation" name="pie-chart-outline"></ion-icon>
-                            <p>dashboard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="click" href="#">
-                            <ion-icon class="icon-navigation" name="notifications-outline"></ion-icon>
-                            <p>notificações</p>
-                            <ion-icon class="notification-icon" name="chevron-down-outline"></ion-icon>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="click" href="#">
-                            <ion-icon class="icon-navigation" name="person-outline"></ion-icon>
-                            <p>perfil</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="click" href="#">
-                            <ion-icon class="icon-navigation" name="settings-outline"></ion-icon>
-                            <p>configurações</p>
-                        </a>
-                    </li>
+                <div id="nav">
+                    <ul>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon class="icon-navigation" name="home-outline"></ion-icon>
+                                <p id="text1" class="navigationText">home</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon class="icon-navigation" name="pie-chart-outline"></ion-icon>
+                                <p id="text2" class="navigationText">dashboard</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="click" onclick="openCloseNotification()" href="#">
+                                <ion-icon class="icon-navigation" name="notifications-outline"></ion-icon>
+                                <p id="text3" class="navigationText">notificações</p>
+                                <button id="animation2">
+                                    <ion-icon class="notification-icon" name="chevron-down-outline"></ion-icon>
+                                </button>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a id="notificationBar" href="#">
+                                        <ion-icon class="icon-navigation-notification" name="alert-circle-outline">
+                                        </ion-icon>
+                                        <p style="font-size: 1rem;" class="navigationText">avisos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a id="notificationBar2" href="#">
+                                        <ion-icon class="icon-navigation-notification" name="bug-outline"></ion-icon>
+                                        <p style="font-size: 1rem;" class="navigationText">erros</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon class="icon-navigation" name="person-outline"></ion-icon>
+                                <p id="text4" class="navigationText">perfil</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon class="icon-navigation" name="settings-outline"></ion-icon>
+                                <p id="text5" class="navigationText">configurações</p>
+                            </a>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-
-            <div class="midNavigation">
-                <button>
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-            </div>
-
+            <button onclick="navigation()" class="midBtn">
+                <ion-icon id="animation3" name="chevron-back-outline"></ion-icon>
+            </button>
             <div class="bottomNavigation">
-                
+                <div>
+                    <ul>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon class="icon-navigation" name="help-circle-outline"></ion-icon>
+                                <p id="text6" class="navigationText">suporte</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="click" href="#">
+                                <ion-icon style="margin-left: 1.2rem" class="icon-navigation" name="exit-outline">
+                                </ion-icon>
+                                <p id="text7" style="margin-left: 0.8rem;" class="navigationText">sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div id="content">

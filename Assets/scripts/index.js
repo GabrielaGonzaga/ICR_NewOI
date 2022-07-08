@@ -13,5 +13,89 @@ function profileConfig() {
         animation.style.transform = 'rotate(0deg)';
     }
 
-
 }
+
+function openCloseNotification() {
+    const textNotification = document.getElementById('notificationBar');
+    const textNotification2 = document.getElementById('notificationBar2');
+    const teste = document.getElementById('nav');
+
+    const animation = document.getElementById('animation2');
+
+    var display = textNotification.style.display || 'none';
+
+    if (display === 'none') {
+
+        textNotification.style.display = 'flex';
+        textNotification2.style.display = 'flex';
+        teste.style.height = '130%';
+
+        animation.style.transform = 'rotate(180deg)';
+        animation.style.transition = '0.5s';
+
+    } else { 
+        textNotification.style.display = 'none';
+        textNotification2.style.display = 'none';
+        teste.style.height = '100%'
+
+        animation.style.transform = 'rotate(0deg)';
+    }
+}
+
+
+function navigation() {
+
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+    const text3 = document.getElementById('text3');
+    const text4 = document.getElementById('text4');
+    const text5 = document.getElementById('text5');
+    const text6 = document.getElementById('text6');
+    const text7 = document.getElementById('text7');
+
+    const content = document.getElementById('content')
+
+    const animation = document.getElementById('animation2');
+    const animation3 = document.getElementById('animation3')
+
+    const nav = document.getElementById('navigation');
+
+    var display = text1.style.display || 'block';
+
+    if (display === 'block') {
+        text1.style.display = 'none';
+        text2.style.display = 'none';
+        text3.style.display = 'none';
+        text4.style.display = 'none';
+        text5.style.display = 'none';
+        text6.style.display = 'none';
+        text7.style.display = 'none';
+
+        content.style.width = '90%';
+
+        animation3.style.transform = 'rotate(180deg)';
+        animation3.style.transition = '0.5s';
+
+        nav.style.width = '4%';
+
+        animation.style.display = 'none';
+    } else {
+        text1.style.display = 'block';
+        text2.style.display = 'block';
+        text3.style.display = 'block';
+        text4.style.display = 'block';
+        text5.style.display = 'block';
+        text6.style.display = 'block';
+        text7.style.display = 'block';
+
+        nav.style.width = '14%';
+        content.style.width = '80%';
+
+        animation3.style.transform = 'rotate(0deg)'
+
+        animation.style.display = 'block';
+    }
+    
+}
+
+
