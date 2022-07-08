@@ -36,9 +36,9 @@ header {
     width: 12%;
     height: 100%;
 
-    margin-left: 1rem;
+    margin-left: 2%;
 
-    /* background: #000FFF; */
+    background: #000FFF;
 }
 
 h2 {
@@ -57,6 +57,8 @@ h2 {
 }
 
 .searchBar {
+    display: block;
+
     width: 100%;
     height: 1.8rem;
 
@@ -78,7 +80,7 @@ h2 {
     width: 10%;
     height: 70px;
 
-    /* background-color: #abb7dd; */
+    background-color: #abb7dd;
 
     margin-right: 2.5%;
 }
@@ -198,7 +200,7 @@ main {
 }
 
 #navigation {
-    width: 14%;
+    width: auto;
     height: 95%;
     background-color: #fff;
 
@@ -222,7 +224,6 @@ main {
     height: 100%;
     width: 100%;
 
-
 }
 
 .topNavigation ul {
@@ -244,6 +245,10 @@ main {
     flex-direction: column;
 }
 
+#text1 {
+    color: #233E71;
+    font-weight: 600;
+}
 
 #notificationBar{
     display: none;
@@ -321,6 +326,8 @@ main {
     font-size: 20px;
 
     margin-top: 5px;
+
+    margin-right: 1rem;
 }
 
 .midBtn {
@@ -359,9 +366,8 @@ main {
 
 .bottomNavigation div {
     width: 100%;
-    height: 45%;
+    height: 40%;
     /* background-color: green; */
-    margin-bottom: 0.8rem;
 }
 
 .bottomNavigation div ul {
@@ -378,7 +384,7 @@ main {
 }
 
 #content {
-    width: 80%;
+    width: 80vw;
     height: 95%;
     background-color: #fff;
 
@@ -431,9 +437,34 @@ footer {
     margin-right: 2.2rem;
 }
 
+@media screen and (min-width: 1700px){
+    .icon-navigation {
+        padding-left: 0.2rem;
+    }
+}
+
+@media screen and (min-width: 1601px) {
+    header {
+        margin-top: 0.8rem;
+    }
+
+    .user-ctn {
+        width: 11%;
+    }
+
+    .navigationText {
+        font-size: 1.3rem;
+    }
+
+    .icon-navigation {
+        margin-left: 1.2rem;
+    }
+}
+
 @media screen and (max-width: 1600px) {
 
     header {
+        /* margin-top: 1.5rem; */
         height: 6.5rem;
     }
 
@@ -441,8 +472,11 @@ footer {
         width: 12%;
     }
 
+    h2 {
+        font-size: 2rem;
+    }
+
     .user-ctn {
-        margin-right: 2.5rem;
         width: 13%;
     }
 
@@ -466,21 +500,28 @@ footer {
         font-size: 15px;
     }
 
-    nav {
+    #navigation {
         height: 100%;
         width: 15%;
     }
 
-    .content {
-        height: 100%;
-    }
 
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1480px) {
     .user-ctn {
         width: 14%;
     }
+
+    .user-ctn {
+        width: 15%;
+        margin-right: 1.8rem;
+    }
+
+    .icon-navigation {
+        margin-left: 0.65rem;
+    }
+
 }
 
 @media screen and (max-width: 1201px) {
@@ -503,13 +544,6 @@ footer {
         margin-left: 1rem;
     }
 
-    nav {
-        width: 20%;
-    }
-
-    .content {
-        width: 75%;
-    }
 
     .ICR-logo-footer {
         width: 70%;
@@ -518,31 +552,42 @@ footer {
 
 @media screen and (max-width: 1025px) {
     .user-ctn {
-        width: 25%;
-    }
-
-    .nav-content {
-        display: flex;
-        justify-content: center;
-    }
-
-    #nav-img {
-        display: none;
-    }
-
-    .center-ctn {
-        width: 10%;
-    }
-
-    .center-img {
-        width: 100%;
+        width: 20%;
     }
 
     .ICR-logo-footer {
-        width: 100%;
+        width: 60%;
     }
 
     .logoFooter {
         width: 70%;
+    }
+}
+
+@media screen and (max-width: 361px) {
+
+    .img-content {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .img-content img {
+        margin-right: 10px;
+    }
+
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-ctn {
+        width: 40%;
+    }
+
+    .searchBar {
+        display: none;
     }
 }
