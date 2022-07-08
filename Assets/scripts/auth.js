@@ -4,7 +4,7 @@ function Auth(e) {
     document.getElementById("form").style.display = "none";
     let auth = true;
          
-    if(!auth){
+    if(auth){
         document.getElementById("load").style.display = "block";
         document.getElementById("load").style.transition = "1s";
         document.getElementById("load").style.opacity = "1";
@@ -12,7 +12,7 @@ function Auth(e) {
     
         // if = true, DashBoard href
         window.setTimeout(function() {
-            window.location.replace("http://127.0.0.1:5500/Pages/DashBoard/index.html");
+            window.location.replace("../DashBoard/index.html");
         }, 2200);
    
         console.log("User authenticated")
