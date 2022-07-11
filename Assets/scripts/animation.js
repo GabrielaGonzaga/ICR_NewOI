@@ -1,20 +1,15 @@
-function Animation (e){
-
-    const background = document.getElementById("backg");
+window.MyAnimation = function Animation (){
+    const background = document.getElementById("background-image");
     const logoIcr = document.getElementById("logo_ICR");
-    const logoNewIO = document.getElementById("logo");
-    const load = document.getElementById("load");    
+    const logoNewIO = document.getElementById("main-content-header");
+    const load = document.getElementById("load-container");    
 
     background.style.opacity = "0.9"
     load.style.opacity= "1"
 
     background.animate([
-    // keyframes
-    { transform: 'translateY(10px)' },
-    { transform: 'translateY(-10)' },
-    { transform: 'scale(1.7)' },
+    { transform: 'scale(2.3)' },
     ], {
-    // timing options
     duration: 2300,
     iterations: 1
     });
@@ -22,44 +17,26 @@ function Animation (e){
     background.style.animationDuration = "400ms";
 
     logoIcr.animate([
-    // keyframes
     { transform: 'translateY(0px)' },
-    { transform: 'translateY(-150px)' }
+    { transform: 'translateY(-120px)' }
     ], {
-    // timing options
-    duration: 2300,
-    iterations: 1
-    });
-
-    logoIcr.animate([
-    // keyframes
-    { transform: 'translateY(0px)' },
-    { transform: 'translateY(-150px)' }
-    ], {
-    // timing options
     duration: 2300,
     iterations: 1
     });
 
     logoNewIO.animate([
-    // keyframes
     { transform: 'translateY(0px)' },
-    { transform: 'translateY(30px)'}
+    { transform: 'translateY(50px)'}
     ], {
-    // timing options
     duration: 2300,
     iterations: 1
     });
 
     load.animate([
-    // keyframes
     { transform: 'translateY(0px)' },
-    { transform: 'translateY(30px)' }
+    { transform: 'translateY(50px)' }
     ], {
-    // timing options
     duration: 2300,
     iterations: 1
     });
 }
-
-export default Animation;
