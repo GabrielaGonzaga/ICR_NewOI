@@ -24,38 +24,8 @@ h1, h2, h3, h4, h5, h6, strong{
     font-weight: normal;
 }
 
-button{
+.button{
     cursor: pointer;
-}
-
-/* input[type="text"], [type="password"]{
-    border: 0;
-    background: #FFF;
-    margin-bottom: 1rem;
-    padding-left: 20px;
-    box-shadow: 1px 4px 5px 1px #a3aab7;
-    border-radius: 15px;
-    height: 3rem;
-    width: 27rem;
-    color: #8a8a8a;
- }
- 
- select{
-    border: 0;
-    background: #FFF;
-    margin-bottom: 1rem;
-    box-shadow: 1px 4px 5px 1px #a3aab7;
-    border-radius: 15px;
-    height: 3rem;
-    width: 27rem;
-    font-weight: 500;
-    font-size: 20px;
-    color: #8a8a8a;
-    text-decoration: none;
-    -webkit-appearance: none;
- }
-
- input[type="button"]{
     border: 0;
     color: #FFF;
     width: 170px;
@@ -67,6 +37,7 @@ button{
     border-radius: 50px;
  }
  
- input[type="button"]:hover{
+ .button:hover{
     background: linear-gradient(135deg, #d8c200 0%, #c8971a 100%);
- } */
+ }
+ 
