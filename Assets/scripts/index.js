@@ -1,21 +1,4 @@
 
-function profileConfig() {
-
-    var display = document.getElementById('profileNavigation').style.display || 'none';
-
-    const animation = document.getElementById('animation');
-
-    if (display === 'none') {
-        document.getElementById('profileNavigation').style.display = 'block';
-        animation.style.transform = 'rotate(180deg)';
-        animation.style.transition = '0.5s';
-
-    } else {
-        document.getElementById('profileNavigation').style.display = 'none';
-        animation.style.transform = 'rotate(0deg)';
-    }
-
-}
 
 function openCloseNotification() {
     const textNotification = document.getElementById('notificationBar');
@@ -39,7 +22,7 @@ function openCloseNotification() {
 
     const content = document.getElementById('content')
 
-    const animation2 = document.getElementById('animation2');
+    // const animation2 = document.getElementById('animation2');
     const animation3 = document.getElementById('animation3')
 
     var displayText = text1.style.display || 'block';
@@ -167,5 +150,3 @@ function navigation() {
     }
     
 }
-
-

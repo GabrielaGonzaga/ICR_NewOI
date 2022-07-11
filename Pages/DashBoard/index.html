@@ -12,40 +12,40 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://kit.fontawesome.com/3380651bc8.js" crossorigin="anonymous"></script>
+    
     <title>DashBoard</title>
 </head>
 
 <body>
     <div class="backgroundColor"></div>
 
-    <header class="displayBetween">
+    <header class="flex displayBetween">
 
-        <div class="img-content displayAround">
-            <img style="width: 27%;" src="../../Assets/img/logo.svg" alt="NewOI">
+        <div class="img-content flex displayAround">
+            <img src="../../Assets/img/logo.svg" alt="NewOI">
             <div>
-                <h2>NewOI</h2>
-                <p class="date">02.01.04</p>
+                <h2 class="fontStyle fontWeight">NewOI</h2>
+                <p class="fontStyle">02.01.04</p>
             </div>
         </div>
 
-        <div style="width: 30%;">
-            <input class="searchBar" type="text" id="searchIcon" />
+        <div class="search-ctn">
+            <input class="searchBar searchImage border" type="text" />
         </div>
 
         <div class="user-ctn">
-            <div class="displayBetween">
-                <h4>Usuário_01</h4>
+            <div class="flex displayBetween">
+                <h4 class="fontStyle fontWeight">Usuário_01</h4>
 
-                <img src="../../Assets/img/perfil.jpg" alt="" class="profilePicture" />
+                <img src="../../Assets/img/perfil.jpg" alt="" class="border profilePicture" />
                 <div>
                     <button onclick="profileConfig()" id="profileOptions">
-                        <img id="animation" src="../../Assets/img/Arrow.svg" alt="">
+                        <ion-icon id="animation" class="arrowSize" name="chevron-down-outline"></ion-icon>
                     </button>
                 </div>
             </div>
 
-            <div id="profileNavigation">
+            <!-- <div id="profileNavigation">
                 <button class="btnCtn borderTop">
                     <img src="../../Assets/img/fi_user.svg" alt="usuário">
                     <p class="date">Trocar de usuário</p>
@@ -58,109 +58,40 @@
                     <img src="../../Assets/img/fi_user.svg" alt="usuário">
                     <p class="date">Trocar de usuário</p>
                 </button>
-            </div>
+            </div> -->
 
-            <div class="displayBetween bottom">
-                <div class="displayBetween">
+            <div class="flex displayBetween bottom">
+                <div class="flex displayBetween">
                     <img src="../../Assets/img/fi_clock.svg" alt="">
-                    <p class="paddingProfile profileText">14:36</p>
+                    <p class="fontStyle">14:36</p>
                 </div>
 
-                <div class="displayBetween">
+                <div class="flex displayBetween">
                     <img src="../../Assets/img/fi_calendar.svg" alt="">
-                    <p class="paddingProfile profileText">24/06/2022</p>
+                    <p class="fontStyle">24/06/2022</p>
                 </div>
             </div>
         </div>
 
     </header>
 
-    <main>
-        <nav id="navigation">
-            <div class="topNavigation">
-                <div id="nav">
-                    <ul>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon style="color: #233E71;" class="icon-navigation" name="home-outline"></ion-icon>
-                                <p id="text1" class="navigationText">home</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon class="icon-navigation" name="pie-chart-outline"></ion-icon>
-                                <p id="text2" class="navigationText">dashboard</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="click" onclick="openCloseNotification()" href="#">
-                                <ion-icon id="imgNot" class="icon-navigation" name="notifications-outline"></ion-icon>
-                                <p id="text3" class="navigationText">notificações</p>
-                                <button id="animation2">
-                                    <ion-icon id="iconNot" class="notification-icon" name="chevron-down-outline"></ion-icon>
-                                </button>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a id="notificationBar" href="#">
-                                        <ion-icon class="icon-navigation-notification" name="alert-circle-outline">
-                                        </ion-icon>
-                                        <p style="font-size: 1rem;" class="navigationText">avisos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a id="notificationBar2" href="#">
-                                        <ion-icon class="icon-navigation-notification" name="bug-outline"></ion-icon>
-                                        <p style="font-size: 1rem;" class="navigationText">erros</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon class="icon-navigation" name="person-outline"></ion-icon>
-                                <p id="text4" class="navigationText">perfil</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon class="icon-navigation" name="settings-outline"></ion-icon>
-                                <p id="text5" class="navigationText">configurações</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <button onclick="navigation()" class="midBtn">
-                <ion-icon id="animation3" name="chevron-back-outline"></ion-icon>
+    <main class="displayAround displayRow">
+        <nav class="border backgroundWhite">
+            <button id="btnOpenClose" class="border backgroundWhite">
+                <ion-icon class="arrowSize" name="chevron-back-outline"></ion-icon>
             </button>
-            <div class="bottomNavigation">
-                <div>
-                    <ul>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon class="icon-navigation" name="help-circle-outline"></ion-icon>
-                                <p id="text6" class="navigationText">suporte</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="click" href="#">
-                                <ion-icon class="icon-navigation" name="arrow-back-outline"></ion-icon>
-                                <p id="text7" style="margin-left: 0.8rem;" class="navigationText">sair</p>
-                            </a>
-                        </li>
-                    </ul>
+
+            <div>
+                <div class="topNavigation">
+
                 </div>
             </div>
         </nav>
-        <div id="content">
+        <div id="content" class="border backgroundWhite">
         </div>
     </main>
 
-    <footer class="displayBetween">
+    <footer class="flex displayBetween">
         <div class="logoFooter">
             <img style="width: 25%;" src="../../Assets/img/senai_logo.svg" />
             <div>
