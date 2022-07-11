@@ -12,8 +12,10 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>DashBoard</title>
+
 </head>
 
 <body>
@@ -39,26 +41,11 @@
 
                 <img src="../../Assets/img/perfil.jpg" alt="" class="border profilePicture" />
                 <div>
-                    <button onclick="profileConfig()" id="profileOptions">
-                        <ion-icon id="animation" class="arrowSize" name="chevron-down-outline"></ion-icon>
+                    <button id="profileOptions" onclick="profileConfig()">
+                        <ion-icon class="arrowSize" name="chevron-down-outline"></ion-icon>
                     </button>
                 </div>
             </div>
-
-            <!-- <div id="profileNavigation">
-                <button class="btnCtn borderTop">
-                    <img src="../../Assets/img/fi_user.svg" alt="usuário">
-                    <p class="date">Trocar de usuário</p>
-                </button>
-                <button class="btnCtn borderMid">
-                    <img src="../../Assets/img/fi_user.svg" alt="usuário">
-                    <p class="date">Trocar de usuário</p>
-                </button>
-                <button class="btnCtn borderBottom">
-                    <img src="../../Assets/img/fi_user.svg" alt="usuário">
-                    <p class="date">Trocar de usuário</p>
-                </button>
-            </div> -->
 
             <div class="flex displayBetween bottom">
                 <div class="flex displayBetween">
@@ -81,21 +68,83 @@
                 <ion-icon class="arrowSize" name="chevron-back-outline"></ion-icon>
             </button>
 
-            <div>
-                <div class="topNavigation">
+            <div class="displayColumn displayBetween">
+                <div class="navigation">
+                    <ul id="ul" class="displayColumn displayBetween">
+                        <li>
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="home-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle fontWeight">home</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="pie-chart-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">dashboard</p>
+                            </a>
+                        </li>
+                        <li class="displayColumn">
+                            <a class="notification decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="notifications-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">notificações</p>
+                                <ion-icon id="btn" class="arrow arrowSize navigation-img" name="chevron-down-outline">
+                                </ion-icon>
+                            </a>
 
+                            <div id="openOrClose" class="btn-before">
+                                <a class="alignCenter decoration marginNotification" href="#">
+                                    <ion-icon class="navigation-img " name="alert-circle-outline"></ion-icon>
+                                    <p class="navigation-txt fontStyle">avisos</p>
+                                </a>
+                                <a class="alignCenter decoration marginNotification" href="#">
+                                    <ion-icon class="navigation-img" name="warning-outline"></ion-icon>
+                                    <p class="navigation-txt fontStyle">erros</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="person-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">perfil</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="settings-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">configurações</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navigation">
+                    <ul class="displayColumn displayBetween">
+                        <li>
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="help-circle-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">suporte</p>
+                            </a>
+                        </li>
+                        <li class="marginBottom">
+                            <a class="decoration alignCenter" href="#">
+                                <ion-icon class="navigation-img" name="exit-outline"></ion-icon>
+                                <p class="navigation-txt fontStyle">sair</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </nav>
-        <div id="content" class="border backgroundWhite">
+        <div class="content border backgroundWhite">
         </div>
     </main>
 
     <footer class="flex displayBetween">
-        <div class="logoFooter">
+        <div class="logoFooter alignCenter">
             <img style="width: 25%;" src="../../Assets/img/senai_logo.svg" />
             <div>
-                <p style="font-weight: 600;" class="footer-text">SENAI 1.23 - “Armando de Arruda Pereira”</p>
+                <p class="footer-text">SENAI 1.23 - “Armando de Arruda Pereira”</p>
                 <p class="footer-text">Lorem ipsum dolor sit amet</p>
             </div>
         </div>
@@ -104,15 +153,44 @@
             <img class="center-img" src="../../Assets/img/BI.svg" alt="">
         </div>
 
-        <div style="justify-content: right;" class="logoFooter">
-
-            <div class="ICR-logo-footer displayBetween">
-                <p style="text-align: end; padding-right: 1.3rem;" class="footer-text">Lorem ipsum dolor sit amet</p>
-                <img style="width: 50%;" src="../../Assets/img/ICR.svg" alt="">
+        <div class="logoFooter">
+            <div class="ICR-ctn alignCenter">
+                <p class="txtWidth">Lorem ipsum dolor sit amet</p>
+                <img class="imgWidth" src="../../Assets/img/ICR.svg" alt="ICR logo">
             </div>
-
         </div>
     </footer>
+
+    <script>
+        let isDropdownOpen = false;
+
+        $('#btn').click(function () {
+
+            if (!isDropdownOpen) {
+                $('#openOrClose').removeClass("btn-before").addClass("btn-after");
+
+                isDropdownOpen = true;
+            } else {
+                $('#openOrClose').removeClass("btn-after").addClass("btn-before");
+
+                isDropdownOpen = false;
+            }
+        });
+
+
+        $('#btnOpenClose').click(function () {
+            $('.navigation-txt').toggleClass('navigation-txt-after');
+            $('.arrow').toggleClass('navigation-txt-after');
+            $('nav').toggleClass('nav-after');
+            $('.navigation').toggleClass('after-navigation');
+            $('.content').toggleClass('content-after');
+
+            if (isDropdownOpen) {
+                $('#openOrClose').removeClass("btn-after").addClass("btn-before");
+                isDropdownOpen = false;
+            }
+        });
+    </script>
 
 </body>
 
