@@ -30,7 +30,6 @@
    flex-direction: column;
    justify-content: center;
    position: fixed;
-
    width: 35rem;
    height: 40rem;
    margin-bottom: 2rem;
@@ -39,7 +38,7 @@
    background: #FBFBFB;
 }
 
-.main-content form{
+.main-content-form {
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -104,19 +103,16 @@
 }
 
 #no-auth-container{
-height: 9rem;
-margin: 1rem ;
-display: none;
-text-align: center;
+   height: 9rem;
+   margin: 1rem ;
+   display: none;
+   text-align: center;
 }
 
 #no-auth-container p {
-color: red;
-margin-bottom: 1rem;
-}
-
-#no-auth-container a {
-font-size: 18px;
+   color: red;
+   margin-bottom: 1rem;
+   font-size: 22px;
 }
 
 .in-radio {
@@ -168,44 +164,21 @@ font-size: 18px;
    }
 }
 
-@-webkit-keyframes spin {
-   to {
-   -webkit-transform: rotate(360deg);
-   }
-}
-
-@media (max-width: 375px)
-{
-   .main-content{
-      width: 22rem;
-      height: 38rem;
-   }
-   .input{
-      height: 3rem;
-      width: 20rem;
-   }
-}
-
-@media (max-width: 450px)
-{
-   .main-content{
-      width: 22rem;
-      height: 40rem;
-   }
-   .input{
-      height: 3rem;
-      width: 20rem;
-   }
-}
-
 @media (max-width: 580px)
 {
    .main-content{
-      width: 27rem;
+      width: 21rem;
       height: 40rem;
    }
    .input{
       height: 3rem;
-      width: 25rem;
+      width: 19rem;
+   }
+}
+
+@media (max-height: 670px)
+{
+   .main-content{
+      margin-top: 2rem;
    }
 }
