@@ -1,3 +1,9 @@
+html,
+body,
+body * {
+    display: flex;
+}
+
 :root {
     --font-color: #233E71;
     --font-colorDefault: #A6A6A6;
@@ -6,462 +12,302 @@
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    background: linear-gradient(0deg, #F5F5F5 65%, #fdcd3b 10%) no-repeat;
 
-    background: #F3F3F3;
+    flex-direction: column;
 }
 
-.backgroundColor {
-    width: 100%;
-    height: 35vh;
-    background: #FFC700;
+body header {
+    width: 100vw;
+    height: 15vh;
 
-    position: absolute;
-}
-
-/* Classe multi uso */
-.flex {
-    display: flex;
-}
-
-.displayAround {
-    align-items: center;
-    justify-content: space-around;
-}
-
-.displayBetween {
     align-items: center;
     justify-content: space-between;
 }
 
-.alignCenter {
+body header div#topLogo {
+    width: 15%;
+    height: 70%;
     align-items: center;
-}
-
-.justifyCenter {
-    justify-content: center;
-}
-
-.displayRow {
-    flex-flow: row wrap;
-}
-
-.displayColumn {
-    flex-flow: column wrap;
-}
-
-.fontStyle {
-    color: var(--font-color);
-    text-transform: capitalize;
-}
-
-
-.fontWeight {
-    font-weight: 600;
-}
-
-.decoration {
-    text-decoration: none;
-}
-
-.border {
-    border-radius: 2rem;
-    border: none;
-}
-
-.arrowSize {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.backgroundWhite {
-    background-color: var(--backGround);
-}
-
-/* Classe multi uso */
-
-/* Classes do header */
-
-header {
-    width: 100%;
-    height: 7.5rem;
-    position: absolute;
-}
-
-.img-content {
-    width: 12%;
-    height: 100%;
-
+    justify-content: row;
     margin-left: 2%;
-}
-
-h2 {
-    font-size: 2.2rem;
-}
-
-.img-content img {
-    width: 25%;
-}
-
-.search-ctn {
-    width: 30%;
-}
-
-.searchBar {
-    display: block;
-
-    width: 100%;
-    height: 1.8rem;
-
-    padding-left: 0.6rem;
-
-}
-
-.searchImage {
-    background-image: url(../../Assets/img/fi_search.svg);
-    background-repeat: no-repeat;
-    background-size: 1.2rem;
-
-    background-position: 97%
-}
-
-.user-ctn {
-    width: 12%;
-    height: 70px;
-
-    /* background-color: #abb7dd;   */
-
-    margin-right: 2.5%;
-}
-
-.profilePicture {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    border: 2px #EAEAEA solid;
-}
-
-#profileOptions {
-    border: none;
-    background: #FFC700;
-}
-
-.bottom {
-    width: 100%;
-    margin-top: 7px;
-}
-
-.bottom div p {
-    margin-left: 0.2rem;
-    font-size: 15px;
-}
-
-/* Classes do header */
-
-/* Classes main */
-
-main {
-    display: flex;
-
-    width: 100vw;
-    height: 75vh;
-    /* background-color: rgba(128, 128, 128, 0.507); */
-
-    position: absolute;
-    top: 15%;
-}
-
-nav {
-    width: 15vw;
-    height: 95%;
-
-    position: relative;
-}
-
-#btnOpenClose {
-    width: 2rem;
-    height: 12%;
-
-    position: absolute;
-    top: 45%;
-    right: -1rem;
-}
-
-nav div {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-}
-
-.navigation {
-    width: 90%;
-    height: auto;
-
-    /* background-color: red; */
-}
-
-.after-navigation {
-    width: auto;
-}
-
-.navigation ul {
-    width: auto;
-    height: 100%;
-
-    display: flex;
-    align-items: flex-start;
-}
-
-.navigation ul li a{
-    width: auto;
-    height: auto;
-    display: flex;
-}
-
-.navigation ul li {
-    margin-top: 1.8rem;
-    display: flex;
-}
-
-.navigation-img {
-    display: block;
-
-    font-size: 1.7rem;
-
-    color: var(--font-colorDefault);
-}
-
-
-.navigation-txt {
-    margin-left: 1rem;
-    font-size: 1.2rem;
-
-    color: var(--font-colorDefault);
-}
-
-.navigation-txt:hover {
-    color: #233E71;
-}
-
-.navigation-txt-after{
-    display: none;
-}
-
-.nav-after {
-    width: 3%;
-}
-
-.btn-after {
-    display: block;
-
-    width: 100%;
-    height: auto;
-    /* background-color: red; */
-
-}
-
-.btn-before {
-    display: none;
-
-}
-
-.marginNotification {
-    margin-top: 1rem;
-    margin-left: 17%;
-}
-
-.marginBottom {
-    margin-bottom: 1.8rem;
-    display: flex;
-}
-
-.content {
-    width: 75vw;
-    height: 95%;
-}
-
-.content-after {
-    width: 87vw;
-}
-
-/* classes do footer */
-
-footer {
-    width: 100%;
-    height: 10vh;
-    /* background-color: blue; */
-
-    position: absolute;
-    bottom: 0;
-}
-
-.logoFooter {
-    width: 30%;
-    height: 100%;
-    /* background-color: red; */
-
-    display: flex;
-    padding-left: 2%;
-}
-
-.footer-text {
-    font-size: 0.8rem;
-    padding-left: 1rem;
-}
-
-.center-ctn {
-    width: 5%;
-    height: 100%;
-    /* background-color: rebeccapurple; */
-
-    display: flex;
-}
-
-.center-img {
-    width: 4vw;
-}
-
-.ICR-ctn {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-}
-
-.txtWidth {
-    width: 30%;
-    text-align: right;
     flex-wrap: wrap;
 }
 
-.imgWidth {
+body header div#topLogo img {
+    width: 25%;
+    margin-right: 5%;
+}
+
+body header div#topLogo div {
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    height: auto;
+}
+
+
+body header div#topLogo div h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #233E71;
+}
+
+.topText {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: #233E71;
+}
+
+body header div#topSearch {
     width: 30%;
-    margin-right: 10%;
-    margin-left: 2%;
+    height: 90%;
 }
 
-@media screen and (max-width: 1480px) {
-    .img-content {
-        width: 17%;
-    }
+body header div#topSearch form {
+    width: 100%;
+    height: 100%;
 
-    .user-ctn {
-        width: 14%;
-    }
+    position: relative;
 
-    .user-ctn {
-        width: 15%;
-        margin-right: 1.8rem;
-    }
+    align-items: center;
+    justify-content: center;
+}
 
-    .icon-navigation {
-        margin-left: 0.65rem;
-    }
+body header div#topSearch form input {
+    width: 95%;
+    height: 30%;
+    border: none;
+    border-radius: 1rem;
+    padding-left: 10px;
+}
 
-    .navigation-txt {
-        font-size: 1rem;
-    }
+
+body header div#topSearch form button {
+    background-color: #fff;
+    border: none;
+    height: 30%;
+    width: 5%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 8%;
+}
+
+body header div#topUser {
+    width: 15%;
+    height: 70%;
+    margin-right: 2%;
+
+    flex-flow: column;
+    justify-content: center;
+}
+
+body header div#topUser div {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body header div#topUser div h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+body header div#topUser div img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    border: #A6A6A6 3px solid;
+}
+
+body header div#topUser div button {
+    background-color: #fdcd3b;
+    border: none;
+}
+
+body header div#topUser div#dateInformation {
+    width: 100%;
+    margin-top: 5%;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+body header div#topUser div#dateInformation div {
+    justify-content: center;
+}
+
+body header div#topUser div#dateInformation div ion-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+body main {
+    width: 100vw;
+    height: 70vh;
+
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+body main nav {
+    width: 15%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body main nav div#openCloseNav {
+    width: 2.5rem;
+    height: 4rem;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 1px #A6A6A6;
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    cursor: pointer;
+}
+
+body main nav div#openCloseNav ion-icon {
+    font-size: 1.5rem;
+}
+
+body main nav ul#topMenu {
+    margin-top: 5%;
+    width: 88%;
+    height: 45%;
+    flex-direction: column;
+}
+
+body main nav ul#bottomMenu {
+    margin-bottom: 10%;
+    width: 88%;
+    height: 15%;
+    flex-direction: column;
+}
+
+body main nav ul div.notification {
+    width: 100%;
+    height: auto;
+
+    align-items: center;
+    margin-top: 5%;
+
+    flex-wrap: wrap;
+}
+
+body main nav ul div.notification ion-icon {
+    font-size: 1.6rem;
+    color: #A6A6A6;
+    margin-left: 2.2rem;
 
 }
 
-@media screen and (max-width: 1201px) {
-
-    header {
-        height: 6rem;
-    }
-
-    main {
-        top: 13%;
-    }
-
-    .user-ctn {
-        width: 18%;
-        margin-right: 1.5rem;
-    }
-
-    .img-content {
-        width: 20%;
-        margin-left: 1rem;
-    }
-
-
-    .ICR-logo-footer {
-        width: 70%;
-    }
-
-    .navigation-img {
-        font: 0.6rem  ;
-    }
-
-    .navigation-txt {
-        font-size: 0.9rem;
-    }
-
-    #btn {
-        margin-left: 2%;
-    }
-
-    nav {
-        width: 18vw;
-    }
-
-    .nav-after {
-        width: 4vw;
-    }
-
-    .txtWidth {
-        width: 40%;
-    }
-
-    .footer-text {
-        font: 0.7rem;
-    }
+body main nav ul div.notification p {
+    font-size: 1rem;
+    color: #A6A6A6;
+    text-transform: capitalize;
+    margin-left: 1rem;
 }
 
-@media screen and (max-width: 1025px) {
 
-    .search-ctn{
-        display: none;
-    }
-
-    .img-content {
-        width: 50%;
-    }
-
-    .user-ctn {
-        /* background-color: red; */
-        width: 50%;
-    }
-
+body main nav ul li div#notificationBar {
+    width: 100%;
+    height: 30%;
 }
 
-@media screen and (max-width: 361px) {
+body main nav ul li * {
+    margin-top: 5%;
+    transition: 0.5s;
+    flex-wrap: wrap;
+}
 
-    .img-content {
-        width: 100%;
+body main nav ul li.page * {
+    color: #233E71;
+    font-weight: 600;
+}
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+body main nav ul li:hover * {
+    color: #233E71;
+    font-weight: 600;
+}
 
-    .img-content img {
-        margin-right: 10px;
-    }
+body main nav ul li button#notificationBtn {
+    margin-left: 1rem;
+    border: none;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
 
+body main nav ul li button#notificationBtn ion-icon {
+    font-size: 1.2rem;
+    color: #A6A6A6;
+}
 
-    h2 {
-        font-size: 1.5rem;
-    }
+body main nav ul li a {
+    text-decoration: none;
+    align-items: center;
+    color: #233E71;
+}
 
-    .user-ctn {
-        width: 40%;
-    }
+body main nav ul li a p {
+    margin-left: 1rem;
+    text-transform: capitalize;
+    color: #A6A6A6;
+}
 
-    .searchBar {
-        display: none;
-    }
+body main nav ul li a ion-icon {
+    font-size: 1.6rem;
+    color: #A6A6A6;
+}
+
+body main div#content {
+    background-color: #fff;
+    border-radius: 30px;
+
+    width: 77%;
+    height: 100%;
+}
+
+body footer {
+    width: 100%;
+    height: 15vh;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+body footer div.logoFooter {
+    width: 25%;
+    height: 100%;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+body footer div.logoFooter img {
+    width: 25%;
+}
+
+body footer div.logoFooter p {
+    width: 50%;
+    font-size: 0.8rem;
+}
+
+body footer img {
+    width: 4%;
 }

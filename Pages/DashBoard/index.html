@@ -12,185 +12,135 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <title>DashBoard</title>
 
 </head>
 
 <body>
-    <div class="backgroundColor"></div>
 
-    <header class="flex displayBetween">
-
-        <div class="img-content flex displayAround">
-            <img src="../../Assets/img/logo.svg" alt="NewOI">
+    <header>
+        <div id="topLogo">
+            <img src="../../Assets/img/logo.svg" alt="logo ICR">
             <div>
-                <h2 class="fontStyle fontWeight">NewOI</h2>
-                <p class="fontStyle">02.01.04</p>
+                <h2>newOI</h2>
+                <p class="topText">02.01.04</p>
             </div>
         </div>
 
-        <div class="search-ctn">
-            <input class="searchBar searchImage border" type="text" />
+        <div id="topSearch">
+            <form action="search">
+                <input type="text" />
+                <button type="submit">
+                    <img src="../../Assets/img/fi_search.svg" alt="">
+                </button>
+            </form>
         </div>
 
-        <div class="user-ctn">
-            <div class="flex displayBetween">
-                <h4 class="fontStyle fontWeight">Usuário_01</h4>
-
-                <img src="../../Assets/img/perfil.jpg" alt="" class="border profilePicture" />
+        <div id="topUser">
+            <div>
+                <h4>giovanni</h4>
+                <img src="../../Assets/img/perfil.jpg" alt="">
+                <button>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </button>
+            </div>
+            <div id="dateInformation">
                 <div>
-                    <button id="profileOptions" onclick="profileConfig()">
-                        <ion-icon class="arrowSize" name="chevron-down-outline"></ion-icon>
-                    </button>
+                    <ion-icon name="time-outline"></ion-icon>
+                    <p class="topText"> 14:36</p>
                 </div>
-            </div>
-
-            <div class="flex displayBetween bottom">
-                <div class="flex displayBetween">
-                    <img src="../../Assets/img/fi_clock.svg" alt="">
-                    <p class="fontStyle">14:36</p>
-                </div>
-
-                <div class="flex displayBetween">
-                    <img src="../../Assets/img/fi_calendar.svg" alt="">
-                    <p class="fontStyle">24/06/2022</p>
+                <div>
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                    <p class="topText">24/06/2022</p>
                 </div>
             </div>
         </div>
 
     </header>
 
-    <main class="displayAround displayRow">
-        <nav class="border backgroundWhite">
-            <button id="btnOpenClose" class="border backgroundWhite">
-                <ion-icon class="arrowSize" name="chevron-back-outline"></ion-icon>
-            </button>
-
-            <div class="displayColumn displayBetween">
-                <div class="navigation">
-                    <ul id="ul" class="displayColumn displayBetween">
-                        <li>
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="home-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle fontWeight">home</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="pie-chart-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">dashboard</p>
-                            </a>
-                        </li>
-                        <li class="displayColumn">
-                            <a class="notification decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="notifications-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">notificações</p>
-                                <ion-icon id="btn" class="arrow arrowSize navigation-img" name="chevron-down-outline">
-                                </ion-icon>
-                            </a>
-
-                            <div id="openOrClose" class="btn-before">
-                                <a class="alignCenter decoration marginNotification" href="#">
-                                    <ion-icon class="navigation-img " name="alert-circle-outline"></ion-icon>
-                                    <p class="navigation-txt fontStyle">avisos</p>
-                                </a>
-                                <a class="alignCenter decoration marginNotification" href="#">
-                                    <ion-icon class="navigation-img" name="warning-outline"></ion-icon>
-                                    <p class="navigation-txt fontStyle">erros</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="person-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">perfil</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="settings-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">configurações</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="navigation">
-                    <ul class="displayColumn displayBetween">
-                        <li>
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="help-circle-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">suporte</p>
-                            </a>
-                        </li>
-                        <li class="marginBottom">
-                            <a class="decoration alignCenter" href="#">
-                                <ion-icon class="navigation-img" name="exit-outline"></ion-icon>
-                                <p class="navigation-txt fontStyle">sair</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <main>
+        <nav>
+            <div id="openCloseNav">
+                <ion-icon name="chevron-back-outline"></ion-icon>
             </div>
+            <ul id="topMenu">
+                <li class="page">
+                    <a href="#">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <p>home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="pie-chart-outline"></ion-icon>
+                        <p>dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                        <p>notificaçoes</p>
+                    </a>
+                    <button id="notificationBtn">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </button>
+                </li>
+                <div class="notification">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    <p>avisos</p>
+                </div>
+                <div class="notification">
+                    <ion-icon name="warning-outline"></ion-icon>
+                    <p>erros</p>
+                </div>
+                <li>
+                    <a href="#">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <p>perfil</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <p>configuraçoes</p>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul id="bottomMenu">
+                <li>
+                    <a href="#">
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                        <p>suporte</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="exit-outline"></ion-icon>
+                        <p>sair</p>
+                    </a>
+                </li>
+            </ul>
 
         </nav>
-        <div class="content border backgroundWhite">
-        </div>
+        <div id="content"></div>
     </main>
 
-    <footer class="flex displayBetween">
-        <div class="logoFooter alignCenter">
-            <img style="width: 25%;" src="../../Assets/img/senai_logo.svg" />
-            <div>
-                <p class="footer-text">SENAI 1.23 - “Armando de Arruda Pereira”</p>
-                <p class="footer-text">Lorem ipsum dolor sit amet</p>
-            </div>
+    <footer>
+        <div class="logoFooter">
+            <img src="../../Assets/img/senai_logo.svg" alt="">
+            <p>Lorem ipsum dolor sit amet SENAI 1.23 - “Armando de Arruda Pereira”</p>
         </div>
 
-        <div class="center-ctn displayAround">
-            <img class="center-img" src="../../Assets/img/BI.svg" alt="">
-        </div>
+        <img src="../../Assets/img/BI.svg" alt="">
 
         <div class="logoFooter">
-            <div class="ICR-ctn alignCenter">
-                <p class="txtWidth">Lorem ipsum dolor sit amet</p>
-                <img class="imgWidth" src="../../Assets/img/ICR.svg" alt="ICR logo">
-            </div>
+            <p>Lorem ipsum dolor sit amet</p>
+            <img src="../../Assets/img/ICR.svg" alt="">
         </div>
     </footer>
-
-    <script>
-        let isDropdownOpen = false;
-
-        $('#btn').click(function () {
-
-            if (!isDropdownOpen) {
-                $('#openOrClose').removeClass("btn-before").addClass("btn-after");
-
-                isDropdownOpen = true;
-            } else {
-                $('#openOrClose').removeClass("btn-after").addClass("btn-before");
-
-                isDropdownOpen = false;
-            }
-        });
-
-
-        $('#btnOpenClose').click(function () {
-            $('.navigation-txt').toggleClass('navigation-txt-after');
-            $('.arrow').toggleClass('navigation-txt-after');
-            $('nav').toggleClass('nav-after');
-            $('.navigation').toggleClass('after-navigation');
-            $('.content').toggleClass('content-after');
-
-            if (isDropdownOpen) {
-                $('#openOrClose').removeClass("btn-after").addClass("btn-before");
-                isDropdownOpen = false;
-            }
-        });
-    </script>
 
 </body>
 
