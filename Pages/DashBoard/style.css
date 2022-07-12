@@ -98,7 +98,7 @@ body header div#topSearch form button {
 }
 
 body header div#topUser {
-    width: 15%;
+    width: 13%;
     height: 70%;
     margin-right: 2%;
 
@@ -155,7 +155,7 @@ body main {
     justify-content: space-around;
 }
 
-body main nav {
+body main nav#nav {
     width: 15%;
     height: 100%;
     background-color: #fff;
@@ -166,110 +166,168 @@ body main nav {
     align-items: center;
 }
 
-body main nav div#openCloseNav {
-    width: 2.5rem;
-    height: 4rem;
+body main nav#nav.isClosed {
+    width: 4%;
+}
+
+body main nav#nav.isClosed ul {
+    align-items: center;
+    margin-top: 5%;
+    justify-content: space-around;
+}
+
+body main nav#nav.isClosed ul li,
+body main nav#nav.isClosed ul#topMenu {
+    margin-top: 30%;
+}
+
+body main nav#nav.isClosed ul#bottomMenu {
+    margin-bottom: 40%;
+}
+
+body main nav#nav.isClosed ul div#notificationBar a,
+body main nav#nav.isClosed ul li a p,
+body main nav#nav.isClosed ul li button {
+    display: none;
+    transition: 0.5s;
+}
+
+body main nav#nav.isClosed div#openCloseNav {
+    transform: rotate(90deg);
+}
+
+body main div#content.isClosed {
+    transition: width 0.5s;
+    width: 85%;
+}
+
+
+body main nav#nav div#openCloseNav {
+    width: 4rem;
+    height: 2.5rem;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px 1px #A6A6A6;
     position: absolute;
     top: 50%;
-    right: -10%;
+    right: -2rem;
     cursor: pointer;
+
+    transform: rotate(-90deg);
+    font-weight: 600;
+
+    background: url('../../Assets/img/Arrow.svg') no-repeat center #fff;
 }
 
-body main nav div#openCloseNav ion-icon {
-    font-size: 1.5rem;
-}
 
-body main nav ul#topMenu {
+body main nav#nav ul#topMenu {
     margin-top: 5%;
     width: 88%;
-    height: 45%;
+    height: auto;
     flex-direction: column;
 }
 
-body main nav ul#bottomMenu {
+body main nav#nav ul#bottomMenu {
     margin-bottom: 10%;
     width: 88%;
     height: 15%;
     flex-direction: column;
 }
 
-body main nav ul div.notification {
-    width: 100%;
-    height: auto;
-
-    align-items: center;
-    margin-top: 5%;
-
-    flex-wrap: wrap;
+body main nav#nav ul#topMenu div#notificationBar {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: width 0.5s, opacity 500ms, visibility 1s, height 0.5s;
+    flex-direction: column;
 }
 
-body main nav ul div.notification ion-icon {
+body main nav#nav ul#topMenu div#notificationBar.isOpen {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+
+    flex-direction: column;
+}
+
+body main nav#nav ul#topMenu div#notificationBar div.notification {
+    width: 100%;
+
+    margin-top: 5%;
+    flex-direction: row;
+    align-items: center;
+}
+
+body main nav#nav ul#topMenu div#notificationBar div.notification a {
+    text-decoration: none;
+    align-items: center;
+}
+
+body main nav#nav ul#topMenu div#notificationBar div.notification ion-icon {
     font-size: 1.6rem;
     color: #A6A6A6;
     margin-left: 2.2rem;
 
 }
 
-body main nav ul div.notification p {
+body main nav#nav ul#topMenu div#notificationBar div.notification p {
     font-size: 1rem;
     color: #A6A6A6;
     text-transform: capitalize;
     margin-left: 1rem;
 }
 
-
-body main nav ul li div#notificationBar {
-    width: 100%;
-    height: 30%;
+body main nav#nav ul li {
+    margin-top: 10%;
+    transition: 0.5s;
+    align-items: center;
 }
 
-body main nav ul li * {
-    margin-top: 5%;
-    transition: 0.5s;
+body main nav#nav ul li.page * {
+    color: #233E71;
+    font-weight: 600;
+}
+
+body main nav#nav ul li:hover * {
+    color: #233E71;
+    font-weight: 600;
+}
+
+body main nav#nav ul#topMenu li button#notificationBtn {
+    border: none;
+    align-items: flex-end;
+    margin-left: 5%;
+    background-color: #fff;
     flex-wrap: wrap;
 }
 
-body main nav ul li.page * {
-    color: #233E71;
-    font-weight: 600;
-}
-
-body main nav ul li:hover * {
-    color: #233E71;
-    font-weight: 600;
-}
-
-body main nav ul li button#notificationBtn {
-    margin-left: 1rem;
-    border: none;
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-}
-
-body main nav ul li button#notificationBtn ion-icon {
+body main nav#nav ul li button#notificationBtn ion-icon {
     font-size: 1.2rem;
+    transition: 0.5s;
     color: #A6A6A6;
 }
 
-body main nav ul li a {
+body main nav#nav ul li button#notificationBtn ion-icon.isOpen {
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+body main nav#nav ul li a {
     text-decoration: none;
     align-items: center;
     color: #233E71;
+    flex-wrap: wrap;
 }
 
-body main nav ul li a p {
+body main nav#nav ul li a p {
     margin-left: 1rem;
     text-transform: capitalize;
     color: #A6A6A6;
 }
 
-body main nav ul li a ion-icon {
+body main nav#nav ul li a ion-icon {
     font-size: 1.6rem;
     color: #A6A6A6;
 }
@@ -280,6 +338,7 @@ body main div#content {
 
     width: 77%;
     height: 100%;
+    transition: width 0.5s;
 }
 
 body footer {
@@ -310,4 +369,129 @@ body footer div.logoFooter p {
 
 body footer img {
     width: 4%;
+}
+
+@media (max-width: 1025px) {
+
+    body header div#topLogo {
+        width: 25%;
+    }
+    
+    body header div#topUser {
+        width: 25%;
+    }
+
+    body main nav#nav {
+        width: 24%;
+    }
+
+    body main nav#nav.isClosed {
+        width: 6%;
+    }
+
+    body main div#content {
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 801px) {
+    main {
+        position: relative;
+    }
+
+    body main nav#nav {
+        width: 35%;
+        left: 0;
+        position: absolute;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+        transition: width 0.5s;
+    }
+
+    body main nav#nav.isClosed {
+        width: 6%;
+        transition: width 0.5s;
+    }
+
+    body main nav#nav div#openCloseNav {
+        box-shadow: -1px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body main nav#nav.isClosed div#openCloseNav {
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        top: 45%;
+        height: 6rem;
+        left: -1rem;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    body main nav#nav.isClosed {
+        width: 0;
+    }
+
+    body main nav#nav.isClosed ul {
+        display: none;
+    }
+
+    body main div#content {
+        position: absolute;
+        left: 25%;
+        z-index: -1;
+        width: 70%
+    }
+
+    body main div#content.isClosed {
+        width: 90%;
+        left: 5%;
+    }
+
+    body footer img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    body footer div.logoFooter img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    body footer div.logoFooter p{
+        display: none;
+    }
+}
+
+@media (max-width: 545px) {
+
+    body main nav#nav {
+        width: 53%;
+    }
+
+    body header div#topLogo {
+        width: 45%;
+    }
+    
+    body header div#topUser {
+        width: 45%;
+    }
+
+    body header div#topSearch {
+        display: none;
+    }
+
+    /* body main nav#nav ul {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    body main nav#nav.isClosed {
+        width: 53%;
+    }
+
+    body main nav#nav ul.isClosed {
+        opacity: 1;
+        visibility: visible;
+    } */
+
+    
 }
